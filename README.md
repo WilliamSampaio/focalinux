@@ -1,3 +1,3 @@
-# Guia Foca Linux - Iniciante
+# Guia Foca Linux
 
-https://williamsampaio.github.io/focalinux-iniciante/
+https://williamsampaio.github.io/focalinux/
