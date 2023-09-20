@@ -1,0 +1,16 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    color: chartreuse;
+    background-color: black;
+    text-shadow: 0 0 10px chartreuse;
+}
+
+a:link {
+    color: orange;
+    text-shadow: 0 0 10px orange;
+}
+
+.screen {
+    background-color: rgb(15, 30, 30);
+}
