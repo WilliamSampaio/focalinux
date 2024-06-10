@@ -4,7 +4,7 @@
 
 <div>
     <img style="width: 33%;" src="/images/screenshot_1.png" alt="screenshot 1">
-    <img style="width: 34%;" src="/images/screenshot_2.png" alt="screenshot 1">
+    <img style="width: 33%;" src="/images/screenshot_2.png" alt="screenshot 1">
     <img style="width: 33%;" src="/images/screenshot_3.png" alt="screenshot 1">
 </div>
 
