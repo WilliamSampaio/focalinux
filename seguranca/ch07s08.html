@@ -9,90 +9,93 @@
   <link rel="up" href="ch07.html" title="Capítulo 7. Criptografia" />
   <link rel="prev" href="ch07s07.html" title="Certificados Auto-Assinados" />
   <link rel="next" href="ch07s09.html" title="Certificados com extensões X509 V3" />
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet/less" type="text/css" href="../style.less" />
 </head>
 
-<body text="black" link="#0000FF" alink="#0000FF">
-  <div class="navheader">
-    <table width="100%" summary="Navigation header">
-      <tr>
-        <th colspan="3" style="text-align: center;">Teste de cliente/servidor SSL/TLS com openssl</th>
-      </tr>
-      <tr>
-        <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch07s07.html">Anterior</a> </td>
-        <th style="width: 60%; text-align: center;">Capítulo 7. Criptografia</th>
-        <td style="width: 20%; text-align: right;"> <a accesskey="n" href="ch07s09.html">Próximo</a></td>
-      </tr>
-    </table>
-    <hr />
-  </div>
-  <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span class="breadcrumb-link"><a
-        href="index.html">Guia Foca - Segurança</a></span> &gt; <span class="breadcrumb-link"><a
-        href="ch07.html">Criptografia</a></span> &gt; <span class="breadcrumb-node">Teste de cliente/servidor SSL/TLS
-      com openssl</span></div>
-  <div class="section">
-    <div class="titlepage">
-      <div>
-        <div>
-          <h2 class="title" style="clear: both"><a id="s-criptografia-x509-clisrv-tst"></a>Teste de cliente/servidor
-            SSL/TLS com openssl</h2>
-        </div>
+<body class="noisy">
+  <div class="frame">
+    <div class="piece output">
+      <div class="navheader">
+        <table width="100%" summary="Navigation header">
+          <tr>
+            <th colspan="3" style="text-align: center;">Teste de cliente/servidor SSL/TLS com openssl</th>
+          </tr>
+          <tr>
+            <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch07s07.html">Anterior</a></td>
+            <th style="width: 60%; text-align: center;">Capítulo 7. Criptografia</th>
+            <td style="width: 20%; text-align: right;"><a accesskey="n" href="ch07s09.html">Próximo</a></td>
+          </tr>
+        </table>
+        <hr>
       </div>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
+      <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span class="breadcrumb-link"><a
+            href="index.html">Guia Foca - Segurança</a></span> &gt; <span class="breadcrumb-link"><a
+            href="ch07.html">Criptografia</a></span> &gt; <span class="breadcrumb-node">Teste de cliente/servidor
+          SSL/TLS
+          com openssl</span></div>
+      <div class="section">
+        <div class="titlepage">
           <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-srv"></a>Servidor OpenSSL</h3>
+            <div>
+              <h2 class="title" style="clear: both"><a id="s-criptografia-x509-clisrv-tst"></a>Teste de cliente/servidor
+                SSL/TLS com openssl</h2>
+            </div>
           </div>
         </div>
-      </div>
-      <p>
-        O <span class="command"><strong>OpenSSL</strong></span> pode atuar como um proxy SSL entre o servidor e um
-        servidor que
-        não suporte <span class="emphasis"><em>SSL</em></span>. Para criar um certificado auto-assinado:
-      </p><span class="command"><strong>
-          $ openssl req -x509 -newkey rsa:2048 -keyout chave.pem -out certificado.pem -days 365 -nodes
-        </strong></span>
-      <p>
-        E para iniciar o servidor SSL:
-      </p><span class="command"><strong>
-          $ openssl s_server -key chave.pem -cert certificado.pem -accept 44330 -www
-        </strong></span>
-      <p>
-        Agora, você está terá um <span class="emphasis"><em>Servidor SSL</em></span> sendo executado pela própria
-        ferramenta <span class="command"><strong>openssl</strong></span>.
-        Para verificar a conexão, pode ser usado o cliente ssl:
-      </p><span class="command"><strong>
-          $ openssl s_client -connect localhost:44330
-        </strong></span>
-      <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-srv"></a>Servidor OpenSSL</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            O <span class="command"><strong>OpenSSL</strong></span> pode atuar como um proxy SSL entre o servidor e um
+            servidor que
+            não suporte <span class="emphasis"><em>SSL</em></span>. Para criar um certificado auto-assinado:
+          </p><span class="command"><strong>
+              $ openssl req -x509 -newkey rsa:2048 -keyout chave.pem -out certificado.pem -days 365 -nodes
+            </strong></span>
+          <p>
+            E para iniciar o servidor SSL:
+          </p><span class="command"><strong>
+              $ openssl s_server -key chave.pem -cert certificado.pem -accept 44330 -www
+            </strong></span>
+          <p>
+            Agora, você está terá um <span class="emphasis"><em>Servidor SSL</em></span> sendo executado pela própria
+            ferramenta <span class="command"><strong>openssl</strong></span>.
+            Para verificar a conexão, pode ser usado o cliente ssl:
+          </p><span class="command"><strong>
+              $ openssl s_client -connect localhost:44330
+            </strong></span>
+          <pre class="screen">
 depth=0 C = BR, ST = ES, L = Vila Velha, O = Internet, OU = Informatica, CN = guiafoca.org, emailAddress = gleydson@guiafoca.org
 verify error:num=18:self signed certificate
 </pre>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-cli"></a>Cliente OpenSSL</h3>
-          </div>
         </div>
-      </div>
-      <p>
-        Quando está depurando um problema dificil, e precisa de alguma forma de te ajudar a entender o que está
-        ocorrendo de errado, eis que aparece novamente o canivete suiço <span
-          class="command"><strong>openssl</strong></span>. Ele te auxiliará
-        a entender o que está ocorrendo de errado, mesmo quando o problema ocorrer em um fluxo DevOps ou ferramenta
-        automatizada. O <span class="command"><strong>openssl</strong></span> pode ser o que precisa para fazer a
-        depuração:
-      </p>
-      <p>
-        Para conectar em um servidor usando a ferramenta <span class="command"><strong>openssl</strong></span>:
-      </p><span class="command"><strong>
-          openssl s_client -connect www.terra.com.br:443
-        </strong></span>
-      <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-cli"></a>Cliente OpenSSL</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Quando está depurando um problema dificil, e precisa de alguma forma de te ajudar a entender o que está
+            ocorrendo de errado, eis que aparece novamente o canivete suiço <span
+              class="command"><strong>openssl</strong></span>. Ele te auxiliará
+            a entender o que está ocorrendo de errado, mesmo quando o problema ocorrer em um fluxo DevOps ou ferramenta
+            automatizada. O <span class="command"><strong>openssl</strong></span> pode ser o que precisa para fazer a
+            depuração:
+          </p>
+          <p>
+            Para conectar em um servidor usando a ferramenta <span class="command"><strong>openssl</strong></span>:
+          </p><span class="command"><strong>
+              openssl s_client -connect www.terra.com.br:443
+            </strong></span>
+          <pre class="screen">
 CONNECTED(00000003)
 depth=2 O = Digital Signature Trust Co., CN = DST Root CA X3
 verify return:1
@@ -163,87 +166,89 @@ Verify return code: 0 (ok)
 ---
 
 </pre>
-      <p>
-        Caso ele reclamar de um certificado auto-assinado (self-signed), utilize o parametro
-        <code class="literal">-CAfile</code> para indicar um arquivo de CA para leitura:
-      </p>
-      <p>
-        Agora, com o cliente conectado, você poderá executar os seguintes comandos:
-      </p>
-      <div class="itemizedlist">
-        <ul class="itemizedlist" style="list-style-type: disc; ">
-          <li class="listitem">
-            <p>
-              <span class="emphasis"><em>q</em></span> - Finaliza a coexão SSL mas ainda aceita novas conexões
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              <span class="emphasis"><em>Q</em></span> - Finaliza a conexão SSL atual e encerra.
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              <span class="emphasis"><em>r</em></span> - Renegocia a conexão SSL
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              <span class="emphasis"><em>R</em></span> - Renegocia a sessão SSL e requisita um certificado de cliente.
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              <span class="emphasis"><em>P</em></span> - Envia algum texto plano na conexão TCP: isto deve fazer o
-              cliente desconectar devido a violação de protocolo.
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              <span class="emphasis"><em>S</em></span> - Mostra dados de utilização do cache de status.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-cli-trustkey"></a>Cadeia de Confiança</h3>
+          <p>
+            Caso ele reclamar de um certificado auto-assinado (self-signed), utilize o parametro
+            <code class="literal">-CAfile</code> para indicar um arquivo de CA para leitura:
+          </p>
+          <p>
+            Agora, com o cliente conectado, você poderá executar os seguintes comandos:
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>
+                  <span class="emphasis"><em>q</em></span> - Finaliza a coexão SSL mas ainda aceita novas conexões
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  <span class="emphasis"><em>Q</em></span> - Finaliza a conexão SSL atual e encerra.
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  <span class="emphasis"><em>r</em></span> - Renegocia a conexão SSL
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  <span class="emphasis"><em>R</em></span> - Renegocia a sessão SSL e requisita um certificado de
+                  cliente.
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  <span class="emphasis"><em>P</em></span> - Envia algum texto plano na conexão TCP: isto deve fazer o
+                  cliente desconectar devido a violação de protocolo.
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  <span class="emphasis"><em>S</em></span> - Mostra dados de utilização do cache de status.
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-      <p>
-        É possível também analisar a cadeia de segurança do certificado <span class="emphasis"><em>SSL</em></span> sendo
-        testado
-        com a ferramenta <span class="emphasis"><em>openssl</em></span>. Ainda continuando a análise do comando:
-        <span class="command"><strong>openssl s_client -connect www.terra.com.br:443</strong></span>:
-      </p>
-      <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-cli-trustkey"></a>Cadeia de Confiança</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            É possível também analisar a cadeia de segurança do certificado <span class="emphasis"><em>SSL</em></span>
+            sendo
+            testado
+            com a ferramenta <span class="emphasis"><em>openssl</em></span>. Ainda continuando a análise do comando:
+            <span class="command"><strong>openssl s_client -connect www.terra.com.br:443</strong></span>:
+          </p>
+          <pre class="screen">
 Certificate chain
  0 s:CN = guiafoca.org
    i:C = US, O = Let's Encrypt, CN = Let's Encrypt Authority X3
  1 s:C = US, O = Let's Encrypt, CN = Let's Encrypt Authority X3
    i:O = Digital Signature Trust Co., CN = DST Root CA X3
 </pre>
-      <p>
-        Mostra a relação entre <span class="emphasis"><em>issuer</em></span> e <span
-          class="emphasis"><em>subject</em></span> no certificado. Caso
-        aparecerem números longos hexadecimais no subject, significa que o <span
-          class="command"><strong>OpenSSL</strong></span> não possui
-        o OID em sua base de mapeamento, exibindo o hexadecimal em seu lugar. Os OIDS são únicos e
-        identificações que não se repetem, usados entre outras coisas para validação de certificados
-        de validação extendida (EV).
-      </p>
-      <p>
-        Por padrão o openssl mostra apenas o certificado final. Caso deseje mostrar toda a cadeia,
-        use a opção <span class="emphasis"><em>-showcerts</em></span>:
-        <span class="command"><strong>
-            echo Q | openssl s_client -connect www.guiafoca.org:443 -showcerts
-          </strong></span>
-      </p>
-      <pre class="screen">
+          <p>
+            Mostra a relação entre <span class="emphasis"><em>issuer</em></span> e <span
+              class="emphasis"><em>subject</em></span> no certificado. Caso
+            aparecerem números longos hexadecimais no subject, significa que o <span
+              class="command"><strong>OpenSSL</strong></span> não possui
+            o OID em sua base de mapeamento, exibindo o hexadecimal em seu lugar. Os OIDS são únicos e
+            identificações que não se repetem, usados entre outras coisas para validação de certificados
+            de validação extendida (EV).
+          </p>
+          <p>
+            Por padrão o openssl mostra apenas o certificado final. Caso deseje mostrar toda a cadeia,
+            use a opção <span class="emphasis"><em>-showcerts</em></span>:
+            <span class="command"><strong>
+                echo Q | openssl s_client -connect www.guiafoca.org:443 -showcerts
+              </strong></span>
+          </p>
+          <pre class="screen">
 CONNECTED(00000003)
 depth=2 O = Digital Signature Trust Co., CN = DST Root CA X3
 verify return:1
@@ -342,14 +347,16 @@ Verify return code: 0 (ok)
 DONE
 
 </pre>
-      <p>
-        Analisando a saída acima, a parte mais importante é o <span class="emphasis"><em>TLS 1.3</em></span> e o cipher
-        suite usado:
-        <span class="emphasis"><em>ECDHE-ECDSA-AES256-GCM-SHA384</em></span>. Também é possível determinar se o servidor
-        enviou
-        um ID e ticket de sessão TLS
-      </p>
-      <pre class="screen">
+          <p>
+            Analisando a saída acima, a parte mais importante é o <span class="emphasis"><em>TLS 1.3</em></span> e o
+            cipher
+            suite usado:
+            <span class="emphasis"><em>ECDHE-ECDSA-AES256-GCM-SHA384</em></span>. Também é possível determinar se o
+            servidor
+            enviou
+            um ID e ticket de sessão TLS
+          </p>
+          <pre class="screen">
 No client certificate CA names sent
 Peer signing digest: SHA256
 Peer signature type: RSA-PSS
@@ -367,10 +374,10 @@ No ALPN negotiated
 Early data was not sent
 Verify return code: 0 
 </pre>
-      <p>
-        Note que para o <span class="emphasis"><em>TLS 1.2</em></span> a saída é um pouco diferente, como a abaixo:
-      </p>
-      <pre class="screen">
+          <p>
+            Note que para o <span class="emphasis"><em>TLS 1.2</em></span> a saída é um pouco diferente, como a abaixo:
+          </p>
+          <pre class="screen">
 ---
 SSL handshake has read 3966 bytes and written 434 bytes
 Verification: OK
@@ -410,29 +417,32 @@ SSL-Session:
     Extended master secret: no
 
 </pre>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-cli-connupgrade"></a>Testando protocolos que fazem
-              upgrade para TLS</h3>
-          </div>
         </div>
-      </div>
-      <p>
-        Quando é usado com o <span class="emphasis"><em>HTTP</em></span>, o <span class="emphasis"><em>TLS</em></span>
-        troca toda a comunicação para HTTPS.
-        Mas alguns protocolos iniciam como texto plano, e eles fazem upgrade para criptografia. Se quiser testar
-        esse tipod e protocolo, é necessário especificar a opção <code class="literal">-starttls</code>, indicando que
-        o protocolo pode fazer upgrade por si próprio. :
-      </p><span class="command"><strong>
-          openssl s_client -connect gmail-smtp-in.l.google.com:25 -starttls smtp
-        </strong></span>
-      <p>
-        A saída será a seguinte:
-      </p>
-      <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-cli-connupgrade"></a>Testando protocolos que
+                  fazem
+                  upgrade para TLS</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Quando é usado com o <span class="emphasis"><em>HTTP</em></span>, o <span
+              class="emphasis"><em>TLS</em></span>
+            troca toda a comunicação para HTTPS.
+            Mas alguns protocolos iniciam como texto plano, e eles fazem upgrade para criptografia. Se quiser testar
+            esse tipod e protocolo, é necessário especificar a opção <code class="literal">-starttls</code>, indicando
+            que
+            o protocolo pode fazer upgrade por si próprio. :
+          </p><span class="command"><strong>
+              openssl s_client -connect gmail-smtp-in.l.google.com:25 -starttls smtp
+            </strong></span>
+          <p>
+            A saída será a seguinte:
+          </p>
+          <pre class="screen">
 CONNECTED(00000003)
 depth=2 OU = GlobalSign Root CA - R2, O = GlobalSign, CN = GlobalSign
 verify return:1
@@ -513,268 +523,276 @@ Verify return code: 0 (ok)
 ---
 250 SMTPUTF8
 </pre>
-      <p>
-        O upgrade de conexão é suportado para os protocolos SMTP, POP3, IMAP, FTP, e XMPP.
-      </p>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-cert-extract"></a>Extraindo o certificado remoto do
-              cliente</h3>
-          </div>
+          <p>
+            O upgrade de conexão é suportado para os protocolos SMTP, POP3, IMAP, FTP, e XMPP.
+          </p>
         </div>
-      </div>
-      <p>
-        Utilize o seguinte comando do <span class="command"><strong>openssl</strong></span> para extrair o certificado
-        de cliente
-        diretamente de um domínio:
-      </p><span class="command"><strong>
-          $ echo | openssl s_client -connect www.guiafoca.org:443 2&gt;&amp;1 |
-          sed --quiet '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' &gt; www.guiafoca.org.crt
-        </strong></span>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-diff-handshakefmt"></a>Usando formatos diferentes de
-              HandShake de conexão</h3>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-cert-extract"></a>Extraindo o certificado remoto do
+                  cliente</h3>
+              </div>
+            </div>
           </div>
+          <p>
+            Utilize o seguinte comando do <span class="command"><strong>openssl</strong></span> para extrair o
+            certificado
+            de cliente
+            diretamente de um domínio:
+          </p><span class="command"><strong>
+              $ echo | openssl s_client -connect www.guiafoca.org:443 2&gt;&amp;1 |
+              sed --quiet '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' &gt; www.guiafoca.org.crt
+            </strong></span>
         </div>
-      </div>
-      <p>
-        Em alguma situações, durante os tests do <span class="command"><strong>OpenSSL</strong></span>, suas tentativas
-        podem falhar
-        (mesmo que saiba que o servidor utiliza <span class="command"><strong>TLS</strong></span>, vendo ele funcionando
-        pelo navegador).
-        Uma possivel causa é quando o servidor não suporta o handshake antigo do <code class="literal">SSL 2</code>.
-      </p>
-      <p>
-        Como <span class="command"><strong>OpenSSL</strong></span> tenta negociar todos os protocolos que conhece e como
-        o
-        o <code class="literal">SSL2</code> pode ser negociado apenas usando o antigo handshake SSL2, ele
-        usa este handshake como padrão.
-      </p>
-      <p>
-        Mesmo que ele esteja associado com um protocolo muito antigo e inseguro, o
-        formato de handshake antigo não é inseguro. Ele suporta upgrades, o que
-        significa que um protocolo melhor pode ser negociado. No entanto, esta formato de
-        handshake não suporta muitas características de conexão que foram criadas após
-        o SSL 2.
-      </p>
-      <p>
-        Desta forma, para forçar o OpenSSL a usar um novo formato de conexão, faça isso
-        desativando o SSL2 :
-      </p><span class="command"><strong>
-          openssl s_client -connect www.guiafoca.org:443 -no_ssl2
-        </strong></span>
-      <p>
-        Uma forma alternativa de fazer o mesmo, é especificar o servername na linha de comando:
-      </p><span class="command"><strong>
-          openssl s_client -connect www.guiafoca.org:443 -servername www.guiafoca.org
-        </strong></span>
-      <p>
-        A opção <code class="literal">-servername [nome]</code> permite o habilitar a conexão usaando
-        SNI (Server Name Indicator), o que forçará o uso do novo padrão SSL3.
-      </p>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-proto-tst"></a>Testando o suporte a uma versão
-              específica de protocolo SSL</h3>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-tst-diff-handshakefmt"></a>Usando formatos
+                  diferentes de
+                  HandShake de conexão</h3>
+              </div>
+            </div>
           </div>
+          <p>
+            Em alguma situações, durante os tests do <span class="command"><strong>OpenSSL</strong></span>, suas
+            tentativas
+            podem falhar
+            (mesmo que saiba que o servidor utiliza <span class="command"><strong>TLS</strong></span>, vendo ele
+            funcionando
+            pelo navegador).
+            Uma possivel causa é quando o servidor não suporta o handshake antigo do <code class="literal">SSL 2</code>.
+          </p>
+          <p>
+            Como <span class="command"><strong>OpenSSL</strong></span> tenta negociar todos os protocolos que conhece e
+            como
+            o
+            o <code class="literal">SSL2</code> pode ser negociado apenas usando o antigo handshake SSL2, ele
+            usa este handshake como padrão.
+          </p>
+          <p>
+            Mesmo que ele esteja associado com um protocolo muito antigo e inseguro, o
+            formato de handshake antigo não é inseguro. Ele suporta upgrades, o que
+            significa que um protocolo melhor pode ser negociado. No entanto, esta formato de
+            handshake não suporta muitas características de conexão que foram criadas após
+            o SSL 2.
+          </p>
+          <p>
+            Desta forma, para forçar o OpenSSL a usar um novo formato de conexão, faça isso
+            desativando o SSL2 :
+          </p><span class="command"><strong>
+              openssl s_client -connect www.guiafoca.org:443 -no_ssl2
+            </strong></span>
+          <p>
+            Uma forma alternativa de fazer o mesmo, é especificar o servername na linha de comando:
+          </p><span class="command"><strong>
+              openssl s_client -connect www.guiafoca.org:443 -servername www.guiafoca.org
+            </strong></span>
+          <p>
+            A opção <code class="literal">-servername [nome]</code> permite o habilitar a conexão usaando
+            SNI (Server Name Indicator), o que forçará o uso do novo padrão SSL3.
+          </p>
         </div>
-      </div>
-      <p>
-        Por padrão, o <span class="command"><strong>openssl s_client</strong></span> tentará usar o melhor protocolo
-        para falar com o servidor
-        remoto e reportará a versão negociada na saída:
-      </p>
-      <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-proto-tst"></a>Testando o suporte a uma versão
+                  específica de protocolo SSL</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Por padrão, o <span class="command"><strong>openssl s_client</strong></span> tentará usar o melhor protocolo
+            para falar com o servidor
+            remoto e reportará a versão negociada na saída:
+          </p>
+          <pre class="screen">
 Protocol : TLSv1.2
 </pre>
-      <p>
-        Caso precise testar o suporte a uma versão específica, então você terá duas opções.
-      </p>
-      <div class="orderedlist">
-        <ol class="orderedlist" type="1">
-          <li class="listitem">
-            <p>
-              Especificar explicitamente qual deseja usar entre as opções: -ssl2, -ssl3, -tls1, -tls1_1, -tls1_2,
-              -tls1_3
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              Especificar que protocolos você NÂO deseja testar usando uma das opções:
-              -no_ssl2, -no_ssl3, -no_tls1, -no_tls1_1, -no_tls1_2
-            </p>
-          </li>
-        </ol>
-      </div>
-      <p>
-        # Caso o client não suportar a opção, você receberá o retorno:
-      </p>
-      <pre class="screen">
+          <p>
+            Caso precise testar o suporte a uma versão específica, então você terá duas opções.
+          </p>
+          <div class="orderedlist">
+            <ol class="orderedlist" type="1">
+              <li class="listitem">
+                <p>
+                  Especificar explicitamente qual deseja usar entre as opções: -ssl2, -ssl3, -tls1, -tls1_1, -tls1_2,
+                  -tls1_3
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  Especificar que protocolos você NÂO deseja testar usando uma das opções:
+                  -no_ssl2, -no_ssl3, -no_tls1, -no_tls1_1, -no_tls1_2
+                </p>
+              </li>
+            </ol>
+          </div>
+          <p>
+            # Caso o client não suportar a opção, você receberá o retorno:
+          </p>
+          <pre class="screen">
 $ openssl s_client -connect www.guiafoca.org:443 -showcerts -tls1_1
 s_client: Option unknown option -tls1_1
 s_client: Use -help for summary.
 </pre>
-      <p>
-        <span class="emphasis"><em>OBS</em></span>: A versão <span class="command"><strong>OpenSSL</strong></span> <code
-          class="literal">1.1.0f</code> e mais novas,
-        apenas suportam o TLS e a opção <code class="literal">-no_ssl3</code>.
-      </p>
-      <p>
-        Caso o servidor não suportar uma versão de protocolo, o seguinte retorno será
-        mostrado:
-      </p>
-      <pre class="screen">
+          <p>
+            <span class="emphasis"><em>OBS</em></span>: A versão <span class="command"><strong>OpenSSL</strong></span>
+            <code class="literal">1.1.0f</code> e mais novas,
+            apenas suportam o TLS e a opção <code class="literal">-no_ssl3</code>.
+          </p>
+          <p>
+            Caso o servidor não suportar uma versão de protocolo, o seguinte retorno será
+            mostrado:
+          </p>
+          <pre class="screen">
 $ openssl s_client -connect www.guiafoca.org:443 -tls1_2
 CONNECTED(00000003)
 140455015261856:error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number:s3↩
 _pkt.c:340:
 </pre>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-cipher-tst"></a>Testando o suporte a um conjunto de
-              Ciphers</h3>
-          </div>
         </div>
-      </div>
-      <p>
-        A configuração do Cipher é feita ao selecionar os ciphers que deseja usar, mas se
-        especificar somente um conjunto de Ciphers e fizer o handshake com sucesso no servidor,
-        claramente significa que ele suporta o conjunto. Se o handshake falhar, saberá que não tem suporte
-        a àquele conjunto:
-      </p>
-      <p>
-        Para testar se o o servidor suporta RC4-SHA:
-      </p><span class="command"><strong>
-          openssl s_client -connect www.guiafoca.org:443 -cipher RC4-SHA
-        </strong></span>
-      <p>
-        Para obter uma lista de todos os tipos suportados por um servidor, inicie com o
-        comando:
-      </p><span class="command"><strong>
-          # openssl ciphers ALL
-        </strong></span>
-      <p>
-        Para obter uma lista de todos os ciphers ssl suportados por sua versão e envie-os
-        um a um para teste individual, possivelmente usando um script.
-        Observe que você somente pode testar com Ciphers também suportados por sua versão de
-        SSL.
-      </p>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-SNI-tst"></a>Testando servidores que requerem SNI</h3>
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-cipher-tst"></a>Testando o suporte a um conjunto de
+                  Ciphers</h3>
+              </div>
+            </div>
           </div>
+          <p>
+            A configuração do Cipher é feita ao selecionar os ciphers que deseja usar, mas se
+            especificar somente um conjunto de Ciphers e fizer o handshake com sucesso no servidor,
+            claramente significa que ele suporta o conjunto. Se o handshake falhar, saberá que não tem suporte
+            a àquele conjunto:
+          </p>
+          <p>
+            Para testar se o o servidor suporta RC4-SHA:
+          </p><span class="command"><strong>
+              openssl s_client -connect www.guiafoca.org:443 -cipher RC4-SHA
+            </strong></span>
+          <p>
+            Para obter uma lista de todos os tipos suportados por um servidor, inicie com o
+            comando:
+          </p><span class="command"><strong>
+              # openssl ciphers ALL
+            </strong></span>
+          <p>
+            Para obter uma lista de todos os ciphers ssl suportados por sua versão e envie-os
+            um a um para teste individual, possivelmente usando um script.
+            Observe que você somente pode testar com Ciphers também suportados por sua versão de
+            SSL.
+          </p>
         </div>
-      </div>
-      <p>
-        Como o SSL e o TLS inicialmente foram feitos para suportar um website por IP, o
-        SNI é uma extensão do TLS que permite usar mais de um certificado com o mesmo
-        endpoint IP. Isso é importante principalmente para provedores de hospedagem que
-        utilizam IPV4, devido a escassez de endereços IP.
-      </p>
-      <p>
-        Pra que isso ocorra, o TLS usa a extensão para enviar o nome designado
-        e os servidores TLS utilizam para selecioanr o certificado correto para
-        responder. Em resumo, o SNI permite o uso de hospedagens de forma segura.
-      </p>
-      <p>
-        Caso tentar conectar sem SNI em servidor com SNI, uma das três coisas acontecerão:
-      </p>
-      <div class="itemizedlist">
-        <ul class="itemizedlist" style="list-style-type: disc; ">
-          <li class="listitem">
-            <p>
-              A mais frequente, você receberá o mesmo certificado que obteria caso os dados
-              SNI não forem fornecidos
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              O servidor reponderá com um certificado diferente do site que fará o teste
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              Muito raramente, o servidor abortará o handshake e recusará a conexão
-            </p>
-          </li>
-        </ul>
-      </div>
-      <p>
-        Você pode ativar o teste de <span class="emphasis"><em>SNI</em></span> no <code class="literal">s_client</code>
-        com a
-        opção <code class="literal">-servername</code>:
-      </p><span class="command"><strong>
-          openssl s_client -connect www.guiafoca.org:443 -servername www.guiafoca.org
-        </strong></span>
-      <p>
-        Desta forma, a conexão resolvera o IP do parametro passado por <code class="literal">-connect</code>
-        e enviará o nome indicado por <code class="literal">-servername</code>.
-      </p>
-      <p>
-        Você pode determinar se o site requer SNI testando ele com e sem o parametro <code class="literal">-servername
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-SNI-tst"></a>Testando servidores que requerem SNI
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            Como o SSL e o TLS inicialmente foram feitos para suportar um website por IP, o
+            SNI é uma extensão do TLS que permite usar mais de um certificado com o mesmo
+            endpoint IP. Isso é importante principalmente para provedores de hospedagem que
+            utilizam IPV4, devido a escassez de endereços IP.
+          </p>
+          <p>
+            Pra que isso ocorra, o TLS usa a extensão para enviar o nome designado
+            e os servidores TLS utilizam para selecioanr o certificado correto para
+            responder. Em resumo, o SNI permite o uso de hospedagens de forma segura.
+          </p>
+          <p>
+            Caso tentar conectar sem SNI em servidor com SNI, uma das três coisas acontecerão:
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>
+                  A mais frequente, você receberá o mesmo certificado que obteria caso os dados
+                  SNI não forem fornecidos
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  O servidor reponderá com um certificado diferente do site que fará o teste
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  Muito raramente, o servidor abortará o handshake e recusará a conexão
+                </p>
+              </li>
+            </ul>
+          </div>
+          <p>
+            Você pode ativar o teste de <span class="emphasis"><em>SNI</em></span> no <code
+              class="literal">s_client</code>
+            com a
+            opção <code class="literal">-servername</code>:
+          </p><span class="command"><strong>
+              openssl s_client -connect www.guiafoca.org:443 -servername www.guiafoca.org
+            </strong></span>
+          <p>
+            Desta forma, a conexão resolvera o IP do parametro passado por <code class="literal">-connect</code>
+            e enviará o nome indicado por <code class="literal">-servername</code>.
+          </p>
+          <p>
+            Você pode determinar se o site requer SNI testando ele com e sem o parametro <code class="literal">-servername
 </code>
-        e comparando os resultados. Caso não forem, o SNI é requerido.
-      </p>
-      <p>
-        Algumas vezes, se o nome requisitado não estiver disponível, o servidor mostrará isso
-        com um alerta TLS:
-      </p>
-      <pre class="screen">
+            e comparando os resultados. Caso não forem, o SNI é requerido.
+          </p>
+          <p>
+            Algumas vezes, se o nome requisitado não estiver disponível, o servidor mostrará isso
+            com um alerta TLS:
+          </p>
+          <pre class="screen">
 openssl s_client -connect www.guiafoca.org:443 -servername www.guiadofoca.org
 CONNECTED(00000003)
 1255:error:14077458:SSL routines:SSL23_GET_SERVER_HELLO:reason(1112):s23_clnt.c:596:
 </pre>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-connreuse-tst"></a>Testando reuso de conexão no SSL</h3>
-          </div>
         </div>
-      </div>
-      <p>
-        O parâmetro <code class="literal">-reconnect</code> faz o teste de reuso de sessão. Neste modo, o
-        <code class="literal">openssl s_client</code> conectará no destino sez vezes, a primeira será a nova
-        conexão e tentará reutilizar a conexão nas próximas cinco.
-      </p>
-      <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-connreuse-tst"></a>Testando reuso de conexão no SSL
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            O parâmetro <code class="literal">-reconnect</code> faz o teste de reuso de sessão. Neste modo, o
+            <code class="literal">openssl s_client</code> conectará no destino sez vezes, a primeira será a nova
+            conexão e tentará reutilizar a conexão nas próximas cinco.
+          </p>
+          <pre class="screen">
 echo | openssl s_client -connect www.guiafoca.org:443 -reconnect
 </pre>
-      <p>
-        Na primeira:
-      </p>
-      <pre class="screen">
+          <p>
+            Na primeira:
+          </p>
+          <pre class="screen">
 New, TLSv1.3, Cipher is ECDHE-RSA-AES128-GCM-SHA256
 Server public key is 2048 bit
 </pre>
-      <p>
-        Nas tentativas seguintes:
-      </p>
-      <pre class="screen">
+          <p>
+            Nas tentativas seguintes:
+          </p>
+          <pre class="screen">
 Reused, TLSv1.3, Cipher is ECDHE-RSA-AES128-GCM-SHA256
 Secure Renegotiation IS supported
 </pre>
-      <p>
-        Caso o reuso de conexão não estiver ativado, você receberá o seguinte retorno:
-      </p>
-      <pre class="screen">
+          <p>
+            Caso o reuso de conexão não estiver ativado, você receberá o seguinte retorno:
+          </p>
+          <pre class="screen">
 New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
 Secure Renegotiation IS NOT supported
 Compression: NONE
@@ -784,71 +802,72 @@ Early data was not sent
 Verify return code: 0 (ok)
 
 </pre>
-      <p>
-        OBS: Para desativar o uso de tickets de sessão, caso o cliente não utilize essa
-        característica, desative com a opção -no_ticket
-      </p>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-ocsp-validation"></a>Validação de revogação OCSP</h3>
-          </div>
+          <p>
+            OBS: Para desativar o uso de tickets de sessão, caso o cliente não utilize essa
+            característica, desative com a opção -no_ticket
+          </p>
         </div>
-      </div>
-      <p>
-        O <code class="literal">OCSP</code> significa <span class="emphasis"><em>Online Certificate Status
-            Protocol</em></span>
-        (Protocolo de status online do Certificado), descrito na RFC2560, ajuda a elevar
-        a segurança de publicação de certificados, através da verificação do seatus de validade do
-        certificado.
-      </p>
-      <p>
-        Se o responder <code class="literal">OCSP</code> estiver com mal funcionamento, geralmente é dificil
-        entender o porque. A verificação do status da revogação do certificado pela linha
-        de comando é possível, mas nem sempre fácil. Ela pode ser feita da seguinte forma:
-      </p>
-      <div class="itemizedlist">
-        <ul class="itemizedlist" style="list-style-type: disc; ">
-          <li class="listitem">
-            <p>
-              Obtenha um certificado que deseja verifica a revogação
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              Obtenha o certificado do emissor
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              Determine a URL do reponder OCSP
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              Envie uma requisição OCSP e observe a resposta
-            </p>
-          </li>
-        </ul>
-      </div>
-      <p>
-        Para os primeiros dois passos, conecte no servidro com a opção -showcerts como especificado:
-      </p>
-      <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-ocsp-validation"></a>Validação de revogação OCSP
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            O <code class="literal">OCSP</code> significa <span class="emphasis"><em>Online Certificate Status
+                Protocol</em></span>
+            (Protocolo de status online do Certificado), descrito na RFC2560, ajuda a elevar
+            a segurança de publicação de certificados, através da verificação do seatus de validade do
+            certificado.
+          </p>
+          <p>
+            Se o responder <code class="literal">OCSP</code> estiver com mal funcionamento, geralmente é dificil
+            entender o porque. A verificação do status da revogação do certificado pela linha
+            de comando é possível, mas nem sempre fácil. Ela pode ser feita da seguinte forma:
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>
+                  Obtenha um certificado que deseja verifica a revogação
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  Obtenha o certificado do emissor
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  Determine a URL do reponder OCSP
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  Envie uma requisição OCSP e observe a resposta
+                </p>
+              </li>
+            </ul>
+          </div>
+          <p>
+            Para os primeiros dois passos, conecte no servidro com a opção -showcerts como especificado:
+          </p>
+          <pre class="screen">
 openssl s_client -connect www.guiafoca.org:443 -showcerts
 </pre>
-      <p>
-        Para obter somente o endereço do responder OCSP, utilize o seguinte comando no
-        certificado baixado localmente:
-      </p><span class="command"><strong>
-          openssl x509 -in fd.crt -noout -ocsp_uri
-        </strong></span>
-      <p>
-        Agora, você poderá enviar a requisição OCSP:
-      </p>
-      <pre class="screen">
+          <p>
+            Para obter somente o endereço do responder OCSP, utilize o seguinte comando no
+            certificado baixado localmente:
+          </p><span class="command"><strong>
+              openssl x509 -in fd.crt -noout -ocsp_uri
+            </strong></span>
+          <p>
+            Agora, você poderá enviar a requisição OCSP:
+          </p>
+          <pre class="screen">
 openssl ocsp -issuer issuer.crt -cert fd.crt -url http://www.guiafoca.org/ -CAfile issuer.crt
 WARNING: no nonce in response
 Response verify OK
@@ -857,45 +876,45 @@ fd.crt: good
         Next Update: Feb 18 23:59:10 2020 GMT
 
 </pre>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-OCSP-stapling-tst"></a>Testando o suporte a OCSP
-              Stapling</h3>
-          </div>
         </div>
-      </div>
-      <p>
-        O OCSP Stapling é um recurso opcional que permite ao certificado do servidor ser
-        acompanhado por uma resposta OCSP que prova sua validade. Porque a resposta OCSP
-        é entregue através de uma conexão existente, o cliente não precisa pega-la separadamente.
-      </p>
-      <p>
-        O OCSP Stapling é usado somente se requisitado pelo cliente, que envia a extensão
-        status_request em uma requisição handshake. O servidor que suporta o OCSP stapling
-        responderá incluindo uma requisião OCSP como parte do handshake.
-      </p>
-      <p>
-        Quando utiliza a ferramenta s_client, o OCSP stapling é requisitado com a opção
-        -status:
-      </p><span class="command"><strong>
-          $ echo | openssl s_client -connect www.guiafoca.org:443 -status
-        </strong></span>
-      <p>
-        Dados relacionados com o OCSP serão mostrados no inicio da conexão de saída. Por
-        exemplo, se o servidor não suportar stapling, você verá essa linha no topo da
-        saída:
-      </p>
-      <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-OCSP-stapling-tst"></a>Testando o suporte a OCSP
+                  Stapling</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            O OCSP Stapling é um recurso opcional que permite ao certificado do servidor ser
+            acompanhado por uma resposta OCSP que prova sua validade. Porque a resposta OCSP
+            é entregue através de uma conexão existente, o cliente não precisa pega-la separadamente.
+          </p>
+          <p>
+            O OCSP Stapling é usado somente se requisitado pelo cliente, que envia a extensão
+            status_request em uma requisição handshake. O servidor que suporta o OCSP stapling
+            responderá incluindo uma requisião OCSP como parte do handshake.
+          </p>
+          <p>
+            Quando utiliza a ferramenta s_client, o OCSP stapling é requisitado com a opção
+            -status:
+          </p><span class="command"><strong>
+              $ echo | openssl s_client -connect www.guiafoca.org:443 -status
+            </strong></span>
+          <p>
+            Dados relacionados com o OCSP serão mostrados no inicio da conexão de saída. Por
+            exemplo, se o servidor não suportar stapling, você verá essa linha no topo da
+            saída:
+          </p>
+          <pre class="screen">
 CONNECTED(00000003)
 OCSP response: no response sent
 </pre>
-      <p>
-        Com um servidor que suporta stapling, você verá a resposta na saída:
-      </p>
-      <pre class="screen">
+          <p>
+            Com um servidor que suporta stapling, você verá a resposta na saída:
+          </p>
+          <pre class="screen">
 OCSP Response Data:
     OCSP Response Status: successful (0x0)
     Response Type: Basic OCSP Response
@@ -913,72 +932,74 @@ OCSP Response Data:
     Next Update: Jan 29 17:48:55 2020 GMT
 [...]
 </pre>
-      <p>
-        O certificado retornando o status <span class="emphasis"><em>good</em></span>, indica que ele não foi
-        revogado.
-      </p>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-CRL-revogation"></a>Verificando a revogação de CRL</h3>
-          </div>
+          <p>
+            O certificado retornando o status <span class="emphasis"><em>good</em></span>, indica que ele não foi
+            revogado.
+          </p>
         </div>
-      </div>
-      <p>
-        O teste de <span class="emphasis"><em>CRL</em></span> é bem mais interessante que fazer o mesmo via
-        <span class="emphasis"><em>OCSP</em></span>. Para fazer a verificação de certificado CRL do
-        servidor, execute os seguintes passos:
-      </p>
-      <div class="itemizedlist">
-        <ul class="itemizedlist" style="list-style-type: disc; ">
-          <li class="listitem">
-            <p>
-              Acesse o servidor que possui o certificado <code class="filename">.crt</code> e execute o seguinte
-              comando:
-              <span class="command"><strong>openssl x509 -in fd.crt -noout -text | grep -A 5 CRL</strong></span>
-            </p>
-          </li>
-          <li class="listitem">&gt;
-            <p>
-              Obtenha o certificado do emissor
-            </p>
-          </li>
-          <li class="listitem">
-            <p>
-              Baixe e verifique a CRL da CA. No caso, faremos um teste usando o RapidSSL:
-              <span class="command"><strong>wget -nd http://rapidssl-crl.geotrust.com/crls/rapidssl.crl</strong></span>
-            </p>
-            <p>
-              Aproveite esta etapa após baixar o <span class="emphasis"><em>CRL</em></span> e execute uma validação
-              para ter certeza que o certificado é assinado pelo issuer (emissor):
-            </p>
-            <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-CRL-revogation"></a>Verificando a revogação de CRL
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            O teste de <span class="emphasis"><em>CRL</em></span> é bem mais interessante que fazer o mesmo via
+            <span class="emphasis"><em>OCSP</em></span>. Para fazer a verificação de certificado CRL do
+            servidor, execute os seguintes passos:
+          </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>
+                  Acesse o servidor que possui o certificado <code class="filename">.crt</code> e execute o seguinte
+                  comando:
+                  <span class="command"><strong>openssl x509 -in fd.crt -noout -text | grep -A 5 CRL</strong></span>
+                </p>
+              </li>
+              <li class="listitem">&gt;
+                <p>
+                  Obtenha o certificado do emissor
+                </p>
+              </li>
+              <li class="listitem">
+                <p>
+                  Baixe e verifique a CRL da CA. No caso, faremos um teste usando o RapidSSL:
+                  <span class="command"><strong>wget -nd
+                      http://rapidssl-crl.geotrust.com/crls/rapidssl.crl</strong></span>
+                </p>
+                <p>
+                  Aproveite esta etapa após baixar o <span class="emphasis"><em>CRL</em></span> e execute uma validação
+                  para ter certeza que o certificado é assinado pelo issuer (emissor):
+                </p>
+                <pre class="screen">
      $ openssl crl -in rapidssl.crl -inform DER -CAfile issuer.crt -noout
 verify OK
      </pre>
-          </li>
-          <li class="listitem">
-            <p>
-              Confira se o serial do Certificado está definido na CRL:
-            </p>
-            <pre class="screen">
+              </li>
+              <li class="listitem">
+                <p>
+                  Confira se o serial do Certificado está definido na CRL:
+                </p>
+                <pre class="screen">
 openssl x509 -in fd.crt -noout -serial
 serial=0FA476
       </pre>
-            <p>
-            </p>
-          </li>
-        </ul>
-      </div>
-      <p>
-        Após o procedimento, se desejar visualizar o certificado em formato legível,
-        vamos converter o <span class="emphasis"><em>CRL</em></span> e analisar seus parâmetros:
-      </p><span class="command"><strong>
-          openssl crl -in rapidssl.crl -inform DER -text -noout
-        </strong></span>
-      <pre class="screen">
+                <p>
+                </p>
+              </li>
+            </ul>
+          </div>
+          <p>
+            Após o procedimento, se desejar visualizar o certificado em formato legível,
+            vamos converter o <span class="emphasis"><em>CRL</em></span> e analisar seus parâmetros:
+          </p><span class="command"><strong>
+              openssl crl -in rapidssl.crl -inform DER -text -noout
+            </strong></span>
+          <pre class="screen">
 Certificate Revocation List (CRL):
         Version 2 (0x1)
     Signature Algorithm: sha1WithRSAEncryption
@@ -1016,37 +1037,39 @@ Revoked Certificates:
          aa:45:9f:ed:36:f8:62:60:66:42:1c:ea:e9:9a:06:25:c4:85:
          fc:77:f2:71
 </pre>
-      <p>
-        O CRL inicia com metadados, que são seguidos de uma lista de certificados
-        revogados, finalizando com uma assinatura. Se o serial do servidor estiver
-        na lista, significa que foi revogado.
-      </p>
-      <p>
-        Se não quiser procurar o serial visualmente, utilize o <span class="command"><strong>grep</strong></span> para
-        fazer a filtragem.
-        <span class="command"><strong>openssl crl -in rapidssl.crl -inform DER -text -noout | grep FE760</strong></span>
-      </p>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-heartbleed-test"></a>Verificando vulnerabilidade
-              HeartBleed</h3>
-          </div>
+          <p>
+            O CRL inicia com metadados, que são seguidos de uma lista de certificados
+            revogados, finalizando com uma assinatura. Se o serial do servidor estiver
+            na lista, significa que foi revogado.
+          </p>
+          <p>
+            Se não quiser procurar o serial visualmente, utilize o <span class="command"><strong>grep</strong></span>
+            para
+            fazer a filtragem.
+            <span class="command"><strong>openssl crl -in rapidssl.crl -inform DER -text -noout | grep
+                FE760</strong></span>
+          </p>
         </div>
-      </div>
-      <p>
-        A ferramenta <span class="command"><strong>openssl</strong></span> possui um código interno que permite
-        verificar vulnerabilidade
-        de segurança em servidores remotos, como a <code class="literal">HeartBleed</code>. Para utiliza-la,
-        execute o <span class="command"><strong>OpenSSL</strong></span> com o parametro <code
-          class="literal">-tlsextdebug</code>:
-        <span class="command"><strong>
-            $ openssl s_client -connect www.guiafoca.org:443 -tlsextdebug
-          </strong></span>
-      </p>
-      <pre class="screen">
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-heartbleed-test"></a>Verificando vulnerabilidade
+                  HeartBleed</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            A ferramenta <span class="command"><strong>openssl</strong></span> possui um código interno que permite
+            verificar vulnerabilidade
+            de segurança em servidores remotos, como a <code class="literal">HeartBleed</code>. Para utiliza-la,
+            execute o <span class="command"><strong>OpenSSL</strong></span> com o parametro <code
+              class="literal">-tlsextdebug</code>:
+            <span class="command"><strong>
+                $ openssl s_client -connect www.guiafoca.org:443 -tlsextdebug
+              </strong></span>
+          </p>
+          <pre class="screen">
 CONNECTED(00000003)
 TLS server extension "renegotiation info" (id=65281), len=1
 0001 - &lt;SPACES/NULS&gt;
@@ -1055,31 +1078,32 @@ TLS server extension "EC point formats" (id=11), len=4
 TLS server extension "session ticket" (id=35), len=0
 TLS server extension "heartbeat" (id=15), len=1
 </pre>
-      <p>
-        Caso a saída do comando mostrar <span class="emphasis"><em>heartbeat</em></span> ele
-        está vulnerável ao ataque <code class="literal">HeatBleed</code>.
-      </p>
-    </div>
-    <div class="section">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h3 class="title"><a id="s-criptografia-x509-clisrv-DH-paramsize"></a>Determinando o tamanho de parametros
-              DH</h3>
-          </div>
+          <p>
+            Caso a saída do comando mostrar <span class="emphasis"><em>heartbeat</em></span> ele
+            está vulnerável ao ataque <code class="literal">HeatBleed</code>.
+          </p>
         </div>
-      </div>
-      <p>
-        No OpenSSL 1.0.2 e mais novos, quando você se conecta ao servidor utilizando o parametro
-        <code class="literal">s_client</code>, ele exibe mostra o tamanho da chave DH usada. Assim para determinar
-        o tamanho de parametros DH, precisa conectar a ele utilizando ciphers que usam o
-        DH para troca de chave:
+        <div class="section">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="s-criptografia-x509-clisrv-DH-paramsize"></a>Determinando o tamanho de
+                  parametros
+                  DH</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+            No OpenSSL 1.0.2 e mais novos, quando você se conecta ao servidor utilizando o parametro
+            <code class="literal">s_client</code>, ele exibe mostra o tamanho da chave DH usada. Assim para determinar
+            o tamanho de parametros DH, precisa conectar a ele utilizando ciphers que usam o
+            DH para troca de chave:
 
-        <span class="command"><strong>
-            openssl-1.0.2 s_client -connnect www.guiafoca.org:443 -cipher kEDH
-          </strong></span>
-      </p>
-      <pre class="screen">
+            <span class="command"><strong>
+                openssl-1.0.2 s_client -connnect www.guiafoca.org:443 -cipher kEDH
+              </strong></span>
+          </p>
+          <pre class="screen">
 [...]
 ---
 No client certificate CA names sent
@@ -1089,26 +1113,33 @@ Server Temp Key: X25519, 253 bits
 ---
 [...]
 </pre>
+        </div>
+      </div>
+
+      <hr>
+      <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
+      <div class="navfooter">
+        <hr>
+        <table width="100%" summary="Navigation footer">
+          <tr>
+            <td width="40%" style="text-align: left;"><a accesskey="p" href="ch07s07.html">Anterior</a></td>
+            <td width="20%" style="text-align: center;"><a accesskey="u" href="ch07.html">Subir</a></td>
+            <td width="40%" style="text-align: right;"><a accesskey="n" href="ch07s09.html">Próximo</a></td>
+          </tr>
+          <tr>
+            <td width="40%" style="text-align: left;" valign="top">Certificados Auto-Assinados</td>
+            <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao Índice</a></td>
+            <td width="40%" style="text-align: right;" valign="top">Certificados com extensões X509 V3</td>
+          </tr>
+        </table>
+      </div>
+      <div class="piece scanlines noclick"></div>
+      <div class="piece glow noclick"></div>
     </div>
   </div>
-  <HR xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format">
-  </HR>
-  <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
-  <div class="navfooter">
-    <hr />
-    <table width="100%" summary="Navigation footer">
-      <tr>
-        <td width="40%" style="text-align: left;"><a accesskey="p" href="ch07s07.html">Anterior</a> </td>
-        <td width="20%" style="text-align: center;"><a accesskey="u" href="ch07.html">Subir</a></td>
-        <td width="40%" style="text-align: right;"> <a accesskey="n" href="ch07s09.html">Próximo</a></td>
-      </tr>
-      <tr>
-        <td width="40%" style="text-align: left;" valign="top">Certificados Auto-Assinados </td>
-        <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao Índice</a></td>
-        <td width="40%" style="text-align: right;" valign="top"> Certificados com extensões X509 V3</td>
-      </tr>
-    </table>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/less"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

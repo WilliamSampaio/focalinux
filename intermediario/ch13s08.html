@@ -9,108 +9,121 @@
     <link rel="up" href="ch13.html" title="Capítulo 13. Permissões de acesso a arquivos e diretórios" />
     <link rel="prev" href="ch13s07.html" title="chmod" />
     <link rel="next" href="ch13s09.html" title="chown" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet/less" type="text/css" href="../style.less" />
 </head>
 
-<body text="black" link="#0000FF" alink="#0000FF">
-    <div class="navheader">
-        <table width="100%" summary="Navigation header">
-            <tr>
-                <th colspan="3" style="text-align: center;">chgrp</th>
-            </tr>
-            <tr>
-                <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch13s07.html">Anterior</a> </td>
-                <th style="width: 60%; text-align: center;">Capítulo 13. Permissões de acesso a arquivos e diretórios</th>
-                <td style="width: 20%; text-align: right;"> <a accesskey="n" href="ch13s09.html">Próximo</a></td>
-            </tr>
-        </table>
-        <hr />
-    </div>
-    <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span class="breadcrumb-link"><a
-                href="index.html">Guia Foca Linux</a></span> &gt; <span class="breadcrumb-link"><a
-                href="ch13.html">Permissões de acesso a arquivos e diretórios</a></span> &gt; <span
-            class="breadcrumb-node">chgrp</span></div>
-    <div class="section">
-        <div class="titlepage">
-            <div>
-                <div>
-                    <h2 class="title" style="clear: both"><a id="perm-chgrp"></a>chgrp</h2>
-                </div>
+<body class="noisy">
+    <div class="frame">
+        <div class="piece output">
+            <div class="navheader">
+                <table width="100%" summary="Navigation header">
+                    <tr>
+                        <th colspan="3" style="text-align: center;">chgrp</th>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch13s07.html">Anterior</a></td>
+                        <th style="width: 60%; text-align: center;">Capítulo 13. Permissões de acesso a arquivos e
+                            diretórios</th>
+                        <td style="width: 20%; text-align: right;"><a accesskey="n" href="ch13s09.html">Próximo</a></td>
+                    </tr>
+                </table>
+                <hr>
             </div>
-        </div>
-        <p>
-            Muda o grupo de um arquivo/diretório.
-        </p>
-        <p>
-            <span class="command"><strong>chgrp</strong></span> [<span class="emphasis"><em>opções</em></span>] [grupo]
-            [arquivo/diretório]
-        </p>
+            <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span
+                    class="breadcrumb-link"><a href="index.html">Guia Foca Linux</a></span> &gt; <span
+                    class="breadcrumb-link"><a href="ch13.html">Permissões de acesso a arquivos e diretórios</a></span>
+                &gt; <span class="breadcrumb-node">chgrp</span></div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title" style="clear: both"><a id="perm-chgrp"></a>chgrp</h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Muda o grupo de um arquivo/diretório.
+                </p>
+                <p>
+                    <span class="command"><strong>chgrp</strong></span> [<span class="emphasis"><em>opções</em></span>]
+                    [grupo]
+                    [arquivo/diretório]
+                </p>
 
-        <p>
-            Onde:
-        </p>
-        <div class="variablelist">
-            <dl class="variablelist">
-                <dt><span class="term"><span class="emphasis"><em>grupo</em></span></span></dt>
-                <dd>
-                    <p>
-                        Novo grupo do <span class="emphasis"><em>arquivo/diretório</em></span>.
-                    </p>
-                </dd>
-                <dt><span class="term"><span class="emphasis"><em>arquivo/diretório</em></span></span></dt>
-                <dd>
-                    <p>
-                        Arquivo/diretório que terá o grupo alterado.
-                    </p>
-                </dd>
-                <dt><span class="term"><span class="emphasis"><em>opções</em></span>, </span><span class="term">-c,
-                        --changes</span></dt>
-                <dd>
-                    <p>
-                        Somente mostra os arquivos/grupos que forem alterados.
-                    </p>
-                </dd>
-                <dt><span class="term">-f, --silent</span></dt>
-                <dd>
-                    <p>
-                        Não mostra mensagens de erro para arquivos/diretórios que não puderam ser
-                        alterados.
-                    </p>
-                </dd>
-                <dt><span class="term">-v, --verbose</span></dt>
-                <dd>
-                    <p>
-                        Mostra todas as mensagens e arquivos sendo modificados.
-                    </p>
-                </dd>
-                <dt><span class="term">-R, --recursive</span></dt>
-                <dd>
-                    <p>
-                        Altera os grupos de arquivos/sub-diretórios do diretório atual.
-                    </p>
-                </dd>
-            </dl>
-        </div>
+                <p>
+                    Onde:
+                </p>
+                <div class="variablelist">
+                    <dl class="variablelist">
+                        <dt><span class="term"><span class="emphasis"><em>grupo</em></span></span></dt>
+                        <dd>
+                            <p>
+                                Novo grupo do <span class="emphasis"><em>arquivo/diretório</em></span>.
+                            </p>
+                        </dd>
+                        <dt><span class="term"><span class="emphasis"><em>arquivo/diretório</em></span></span></dt>
+                        <dd>
+                            <p>
+                                Arquivo/diretório que terá o grupo alterado.
+                            </p>
+                        </dd>
+                        <dt><span class="term"><span class="emphasis"><em>opções</em></span>, </span><span
+                                class="term">-c,
+                                --changes</span></dt>
+                        <dd>
+                            <p>
+                                Somente mostra os arquivos/grupos que forem alterados.
+                            </p>
+                        </dd>
+                        <dt><span class="term">-f, --silent</span></dt>
+                        <dd>
+                            <p>
+                                Não mostra mensagens de erro para arquivos/diretórios que não puderam ser
+                                alterados.
+                            </p>
+                        </dd>
+                        <dt><span class="term">-v, --verbose</span></dt>
+                        <dd>
+                            <p>
+                                Mostra todas as mensagens e arquivos sendo modificados.
+                            </p>
+                        </dd>
+                        <dt><span class="term">-R, --recursive</span></dt>
+                        <dd>
+                            <p>
+                                Altera os grupos de arquivos/sub-diretórios do diretório atual.
+                            </p>
+                        </dd>
+                    </dl>
+                </div>
 
+            </div>
+
+            <hr>
+            <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
+            <div class="navfooter">
+                <hr>
+                <table width="100%" summary="Navigation footer">
+                    <tr>
+                        <td width="40%" style="text-align: left;"><a accesskey="p" href="ch13s07.html">Anterior</a></td>
+                        <td width="20%" style="text-align: center;"><a accesskey="u" href="ch13.html">Subir</a></td>
+                        <td width="40%" style="text-align: right;"><a accesskey="n" href="ch13s09.html">Próximo</a></td>
+                    </tr>
+                    <tr>
+                        <td width="40%" style="text-align: left;" valign="top">chmod</td>
+                        <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao
+                                Índice</a></td>
+                        <td width="40%" style="text-align: right;" valign="top">chown</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="piece scanlines noclick"></div>
+            <div class="piece glow noclick"></div>
+        </div>
     </div>
-    <HR xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format">
-    </HR>
-    <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
-    <div class="navfooter">
-        <hr />
-        <table width="100%" summary="Navigation footer">
-            <tr>
-                <td width="40%" style="text-align: left;"><a accesskey="p" href="ch13s07.html">Anterior</a> </td>
-                <td width="20%" style="text-align: center;"><a accesskey="u" href="ch13.html">Subir</a></td>
-                <td width="40%" style="text-align: right;"> <a accesskey="n" href="ch13s09.html">Próximo</a></td>
-            </tr>
-            <tr>
-                <td width="40%" style="text-align: left;" valign="top">chmod </td>
-                <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao Índice</a></td>
-                <td width="40%" style="text-align: right;" valign="top"> chown</td>
-            </tr>
-        </table>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

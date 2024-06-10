@@ -9,127 +9,141 @@
     <link rel="up" href="ch11.html" title="Capítulo 11. Comandos de rede" />
     <link rel="prev" href="ch11s08.html" title="talk" />
     <link rel="next" href="ch11s10.html" title="rlogin" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet/less" type="text/css" href="../style.less" />
 </head>
 
-<body text="black" link="#0000FF" alink="#0000FF">
-    <div class="navheader">
-        <table width="100%" summary="Navigation header">
-            <tr>
-                <th colspan="3" style="text-align: center;">ping</th>
-            </tr>
-            <tr>
-                <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch11s08.html">Anterior</a> </td>
-                <th style="width: 60%; text-align: center;">Capítulo 11. Comandos de rede</th>
-                <td style="width: 20%; text-align: right;"> <a accesskey="n" href="ch11s10.html">Próximo</a></td>
-            </tr>
-        </table>
-        <hr />
-    </div>
-    <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span class="breadcrumb-link"><a
-                href="index.html">Guia Foca Linux</a></span> &gt; <span class="breadcrumb-link"><a
-                href="ch11.html">Comandos de rede</a></span> &gt; <span class="breadcrumb-node">ping</span></div>
-    <div class="section">
-        <div class="titlepage">
-            <div>
-                <div>
-                    <h2 class="title" style="clear: both"><a id="cmdn-ping"></a>ping</h2>
-                </div>
+<body class="noisy">
+    <div class="frame">
+        <div class="piece output">
+            <div class="navheader">
+                <table width="100%" summary="Navigation header">
+                    <tr>
+                        <th colspan="3" style="text-align: center;">ping</th>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch11s08.html">Anterior</a></td>
+                        <th style="width: 60%; text-align: center;">Capítulo 11. Comandos de rede</th>
+                        <td style="width: 20%; text-align: right;"><a accesskey="n" href="ch11s10.html">Próximo</a></td>
+                    </tr>
+                </table>
+                <hr>
             </div>
-        </div>
-        <p>
-            Verifica se um computador está disponível na rede.
-            Este comando é muito
-            utilizado por alguns programas de conexão e administradores para verificar se
-            uma determinada máquina está conectada na rede e também para verificar o tempo
-            de resposta de cada máquina da rede. O <span class="command"><strong>ping</strong></span> envia pacotes
-            ICMS ECHO_REQUEST para um computador, este quando recebe o pacote envia uma
-            resposta ao endereço de origem avisando que está disponível na rede.
-        </p>
-        <p>
-            <span class="command"><strong>ping</strong></span> [<span class="emphasis"><em>opções</em></span>] [<span
-                class="emphasis"><em>IP/DNS</em></span>]
-        </p>
+            <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span
+                    class="breadcrumb-link"><a href="index.html">Guia Foca Linux</a></span> &gt; <span
+                    class="breadcrumb-link"><a href="ch11.html">Comandos de rede</a></span> &gt; <span
+                    class="breadcrumb-node">ping</span></div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title" style="clear: both"><a id="cmdn-ping"></a>ping</h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Verifica se um computador está disponível na rede.
+                    Este comando é muito
+                    utilizado por alguns programas de conexão e administradores para verificar se
+                    uma determinada máquina está conectada na rede e também para verificar o tempo
+                    de resposta de cada máquina da rede. O <span class="command"><strong>ping</strong></span> envia
+                    pacotes
+                    ICMS ECHO_REQUEST para um computador, este quando recebe o pacote envia uma
+                    resposta ao endereço de origem avisando que está disponível na rede.
+                </p>
+                <p>
+                    <span class="command"><strong>ping</strong></span> [<span class="emphasis"><em>opções</em></span>]
+                    [<span class="emphasis"><em>IP/DNS</em></span>]
+                </p>
 
-        <p>
-            onde:
-        </p>
-        <div class="variablelist">
-            <dl class="variablelist">
-                <dt><span class="term"><span class="emphasis"><em>IP/dns</em></span></span></dt>
-                <dd>
-                    <p>
-                        Endereço IP ou nome DNS do endereço.
-                    </p>
-                </dd>
-                <dt><span class="term"><span class="emphasis"><em>opções</em></span>, </span><span class="term">-c
-                        [num]</span></dt>
-                <dd>
-                    <p>
-                        Envia <span class="emphasis"><em>num</em></span> pacotes ao computador de destino.
-                    </p>
-                </dd>
-                <dt><span class="term">-f</span></dt>
-                <dd>
-                    <p>
-                        <span class="emphasis"><em>Flood ping</em></span>. Envia novos pacotes antes de receber a
-                        resposta do pacote anterior. Para cada requisição enviada, um "." é mostrado
-                        na tela e para cada resposta recebida, um backspace é mostrado. Somente o
-                        usuário root pode utilizar esta opção e pode te auxiliar muito na detecção de
-                        erros de transmissão de pacotes em interfaces das máquinas em sua rede.
-                    </p>
-                </dd>
-                <dt><span class="term">-i [seg]</span></dt>
-                <dd>
-                    <p>
-                        Aguarda [seg] segundos antes de enviar cada pacote.
-                    </p>
-                </dd>
-                <dt><span class="term">-q</span></dt>
-                <dd>
-                    <p>
-                        Não mostra as requisições enquanto são enviadas, somente mostra as linhas de
-                        sumário no inicio e término do programa.
-                    </p>
-                </dd>
-                <dt><span class="term">-s [tamanho]</span></dt>
-                <dd>
-                    <p>
-                        Especifica o tamanho do pacote que será enviado.
-                    </p>
-                </dd>
-                <dt><span class="term">-v, --verbose</span></dt>
-                <dd>
-                    <p>
-                        Saída detalhada, tanto os pacotes enviados como recebidos são listados.
-                    </p>
-                </dd>
-            </dl>
-        </div>
+                <p>
+                    onde:
+                </p>
+                <div class="variablelist">
+                    <dl class="variablelist">
+                        <dt><span class="term"><span class="emphasis"><em>IP/dns</em></span></span></dt>
+                        <dd>
+                            <p>
+                                Endereço IP ou nome DNS do endereço.
+                            </p>
+                        </dd>
+                        <dt><span class="term"><span class="emphasis"><em>opções</em></span>, </span><span
+                                class="term">-c
+                                [num]</span></dt>
+                        <dd>
+                            <p>
+                                Envia <span class="emphasis"><em>num</em></span> pacotes ao computador de destino.
+                            </p>
+                        </dd>
+                        <dt><span class="term">-f</span></dt>
+                        <dd>
+                            <p>
+                                <span class="emphasis"><em>Flood ping</em></span>. Envia novos pacotes antes de receber
+                                a
+                                resposta do pacote anterior. Para cada requisição enviada, um "." é mostrado
+                                na tela e para cada resposta recebida, um backspace é mostrado. Somente o
+                                usuário root pode utilizar esta opção e pode te auxiliar muito na detecção de
+                                erros de transmissão de pacotes em interfaces das máquinas em sua rede.
+                            </p>
+                        </dd>
+                        <dt><span class="term">-i [seg]</span></dt>
+                        <dd>
+                            <p>
+                                Aguarda [seg] segundos antes de enviar cada pacote.
+                            </p>
+                        </dd>
+                        <dt><span class="term">-q</span></dt>
+                        <dd>
+                            <p>
+                                Não mostra as requisições enquanto são enviadas, somente mostra as linhas de
+                                sumário no inicio e término do programa.
+                            </p>
+                        </dd>
+                        <dt><span class="term">-s [tamanho]</span></dt>
+                        <dd>
+                            <p>
+                                Especifica o tamanho do pacote que será enviado.
+                            </p>
+                        </dd>
+                        <dt><span class="term">-v, --verbose</span></dt>
+                        <dd>
+                            <p>
+                                Saída detalhada, tanto os pacotes enviados como recebidos são listados.
+                            </p>
+                        </dd>
+                    </dl>
+                </div>
 
-        <p>
-            Exemplo: <code class="literal">ping 192.168.1.1</code>, <code class="literal">ping
+                <p>
+                    Exemplo: <code class="literal">ping 192.168.1.1</code>, <code class="literal">ping
 www.debian.org</code>.
-        </p>
+                </p>
+            </div>
+
+            <hr>
+            <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
+            <div class="navfooter">
+                <hr>
+                <table width="100%" summary="Navigation footer">
+                    <tr>
+                        <td width="40%" style="text-align: left;"><a accesskey="p" href="ch11s08.html">Anterior</a></td>
+                        <td width="20%" style="text-align: center;"><a accesskey="u" href="ch11.html">Subir</a></td>
+                        <td width="40%" style="text-align: right;"><a accesskey="n" href="ch11s10.html">Próximo</a></td>
+                    </tr>
+                    <tr>
+                        <td width="40%" style="text-align: left;" valign="top">talk</td>
+                        <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao
+                                Índice</a></td>
+                        <td width="40%" style="text-align: right;" valign="top">rlogin</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="piece scanlines noclick"></div>
+            <div class="piece glow noclick"></div>
+        </div>
     </div>
-    <HR xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format">
-    </HR>
-    <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
-    <div class="navfooter">
-        <hr />
-        <table width="100%" summary="Navigation footer">
-            <tr>
-                <td width="40%" style="text-align: left;"><a accesskey="p" href="ch11s08.html">Anterior</a> </td>
-                <td width="20%" style="text-align: center;"><a accesskey="u" href="ch11.html">Subir</a></td>
-                <td width="40%" style="text-align: right;"> <a accesskey="n" href="ch11s10.html">Próximo</a></td>
-            </tr>
-            <tr>
-                <td width="40%" style="text-align: left;" valign="top">talk </td>
-                <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao Índice</a></td>
-                <td width="40%" style="text-align: right;" valign="top"> rlogin</td>
-            </tr>
-        </table>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

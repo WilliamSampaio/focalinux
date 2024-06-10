@@ -9,213 +9,228 @@
     <link rel="up" href="index.html" title="Guia Foca Linux" />
     <link rel="prev" href="ch08s40.html" title="znew" />
     <link rel="next" href="ch09s02.html" title="telnet" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet/less" type="text/css" href="../style.less" />
 </head>
 
-<body text="black" link="#0000FF" alink="#0000FF">
-    <div class="navheader">
-        <table width="100%" summary="Navigation header">
-            <tr>
-                <th colspan="3" style="text-align: center;">Capítulo 9. Comandos de rede</th>
-            </tr>
-            <tr>
-                <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch08s40.html">Anterior</a> </td>
-                <th style="width: 60%; text-align: center;"> </th>
-                <td style="width: 20%; text-align: right;"> <a accesskey="n" href="ch09s02.html">Próximo</a></td>
-            </tr>
-        </table>
-        <hr />
-    </div>
-    <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span class="breadcrumb-link"><a
-                href="index.html">Guia Foca Linux</a></span> &gt; <span class="breadcrumb-node">Comandos de rede</span>
-    </div>
-    <div class="chapter">
-        <div class="titlepage">
-            <div>
-                <div>
-                    <h1 class="title"><a id="cmdn"></a>Capítulo 9. Comandos de rede</h1>
-                </div>
+<body class="noisy">
+    <div class="frame">
+        <div class="piece output">
+            <div class="navheader">
+                <table width="100%" summary="Navigation header">
+                    <tr>
+                        <th colspan="3" style="text-align: center;">Capítulo 9. Comandos de rede</th>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch08s40.html">Anterior</a></td>
+                        <th style="width: 60%; text-align: center;"></th>
+                        <td style="width: 20%; text-align: right;"><a accesskey="n" href="ch09s02.html">Próximo</a></td>
+                    </tr>
+                </table>
+                <hr>
             </div>
-        </div>
-        <div class="toc">
-            <p><strong>Índice</strong></p>
-            <dl class="toc">
-                <dt><span class="section"><a href="ch09.html#cmdn-who">who</a></span></dt>
-                <dt><span class="section"><a href="ch09s02.html">telnet</a></span></dt>
-                <dt><span class="section"><a href="ch09s03.html">finger</a></span></dt>
-                <dt><span class="section"><a href="ch09s04.html">ftp</a></span></dt>
-                <dt><span class="section"><a href="ch09s05.html">whoami</a></span></dt>
-                <dt><span class="section"><a href="ch09s06.html">dnsdomainname</a></span></dt>
-                <dt><span class="section"><a href="ch09s07.html">hostname</a></span></dt>
-                <dt><span class="section"><a href="ch09s08.html">talk</a></span></dt>
-            </dl>
-        </div>
-        <p>
-            Este capítulo traz alguns comandos úteis para uso em rede e ambientes
-            multiusuário.
-        </p>
-
-
-        <div class="section">
-            <div class="titlepage">
-                <div>
+            <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span
+                    class="breadcrumb-link"><a href="index.html">Guia Foca Linux</a></span> &gt; <span
+                    class="breadcrumb-node">Comandos de rede</span>
+            </div>
+            <div class="chapter">
+                <div class="titlepage">
                     <div>
-                        <h2 class="title" style="clear: both"><a id="cmdn-who"></a>who</h2>
+                        <div>
+                            <h1 class="title"><a id="cmdn"></a>Capítulo 9. Comandos de rede</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <p>
-                Mostra quem está atualmente conectado no computador.
-                Este comando lista os nomes de usuários que estão
-                conectados em seu computador, o terminal e data da conexão.
-            </p>
-            <p>
-                <span class="command"><strong>who</strong></span> [<span class="emphasis"><em>opções</em></span>]
-            </p>
+                <div class="toc">
+                    <p><strong>Índice</strong></p>
+                    <dl class="toc">
+                        <dt><span class="section"><a href="ch09.html#cmdn-who">who</a></span></dt>
+                        <dt><span class="section"><a href="ch09s02.html">telnet</a></span></dt>
+                        <dt><span class="section"><a href="ch09s03.html">finger</a></span></dt>
+                        <dt><span class="section"><a href="ch09s04.html">ftp</a></span></dt>
+                        <dt><span class="section"><a href="ch09s05.html">whoami</a></span></dt>
+                        <dt><span class="section"><a href="ch09s06.html">dnsdomainname</a></span></dt>
+                        <dt><span class="section"><a href="ch09s07.html">hostname</a></span></dt>
+                        <dt><span class="section"><a href="ch09s08.html">talk</a></span></dt>
+                    </dl>
+                </div>
+                <p>
+                    Este capítulo traz alguns comandos úteis para uso em rede e ambientes
+                    multiusuário.
+                </p>
 
-            <p>
-                onde:
-            </p>
-            <div class="variablelist">
-                <dl class="variablelist">
-                    <dt><span class="term"><span class="emphasis"><em>opções</em></span>, </span><span class="term">-H,
-                            --heading</span></dt>
-                    <dd>
-                        <p>
-                            Mostra o cabeçalho das colunas.
-                        </p>
-                    </dd>
-                    <dt><span class="term">-b, --boot</span></dt>
-                    <dd>
-                        <p>
-                            Mostra o horário do último boot do sistema.
-                        </p>
-                    </dd>
-                    <dt><span class="term">-d, --dead</span></dt>
-                    <dd>
-                        <p>
-                            Mostra processos mortos no sistema.
-                        </p>
-                    </dd>
-                    <dt><span class="term">-i, -u, --idle</span></dt>
-                    <dd>
-                        <p>
-                            Mostra o tempo que o usuário está parado em Horas:Minutos.
-                        </p>
-                    </dd>
-                    <dt><span class="term">-m, i am</span></dt>
-                    <dd>
-                        <p>
-                            Mostra o nome do computador e usuário associado ao nome. É equivalente a
-                            digitar <code class="literal">who i am</code> ou <code class="literal">who am i</code>.
-                        </p>
-                    </dd>
-                    <dt><span class="term">-q, --count</span></dt>
-                    <dd>
-                        <p>
-                            Mostra o total de usuários conectados aos terminais.
-                        </p>
-                    </dd>
-                    <dt><span class="term">-r, --runlevel</span></dt>
-                    <dd>
-                        <p>
-                            Mostra o nível de execução atual do sistema e desde quando ele está ativo.
-                        </p>
-                    </dd>
-                    <dt><span class="term">-T, -w, --mesg</span></dt>
-                    <dd>
-                        <p>
-                            Mostra se o usuário pode receber mensagens via <span
-                                class="command"><strong>talk</strong></span>
-                            (conversação).
-                        </p>
-                        <div class="itemizedlist">
-                            <ul class="itemizedlist" style="list-style-type: disc; ">
-                                <li class="listitem">
-                                    <p>
-                                        + O usuário recebe mensagens via talk
-                                    </p>
-                                </li>
-                                <li class="listitem">
-                                    <p>
-                                        - O usuário não recebe mensagens via talk.
-                                    </p>
-                                </li>
-                                <li class="listitem">
-                                    <p>
-                                        ? Não foi possível determinar o dispositivo de terminal onde o usuário está
-                                        conectado.
-                                    </p>
-                                </li>
-                            </ul>
+
+                <div class="section">
+                    <div class="titlepage">
+                        <div>
+                            <div>
+                                <h2 class="title" style="clear: both"><a id="cmdn-who"></a>who</h2>
+                            </div>
                         </div>
-                    </dd>
-                </dl>
+                    </div>
+                    <p>
+                        Mostra quem está atualmente conectado no computador.
+                        Este comando lista os nomes de usuários que estão
+                        conectados em seu computador, o terminal e data da conexão.
+                    </p>
+                    <p>
+                        <span class="command"><strong>who</strong></span> [<span
+                            class="emphasis"><em>opções</em></span>]
+                    </p>
+
+                    <p>
+                        onde:
+                    </p>
+                    <div class="variablelist">
+                        <dl class="variablelist">
+                            <dt><span class="term"><span class="emphasis"><em>opções</em></span>, </span><span
+                                    class="term">-H,
+                                    --heading</span></dt>
+                            <dd>
+                                <p>
+                                    Mostra o cabeçalho das colunas.
+                                </p>
+                            </dd>
+                            <dt><span class="term">-b, --boot</span></dt>
+                            <dd>
+                                <p>
+                                    Mostra o horário do último boot do sistema.
+                                </p>
+                            </dd>
+                            <dt><span class="term">-d, --dead</span></dt>
+                            <dd>
+                                <p>
+                                    Mostra processos mortos no sistema.
+                                </p>
+                            </dd>
+                            <dt><span class="term">-i, -u, --idle</span></dt>
+                            <dd>
+                                <p>
+                                    Mostra o tempo que o usuário está parado em Horas:Minutos.
+                                </p>
+                            </dd>
+                            <dt><span class="term">-m, i am</span></dt>
+                            <dd>
+                                <p>
+                                    Mostra o nome do computador e usuário associado ao nome. É equivalente a
+                                    digitar <code class="literal">who i am</code> ou <code
+                                        class="literal">who am i</code>.
+                                </p>
+                            </dd>
+                            <dt><span class="term">-q, --count</span></dt>
+                            <dd>
+                                <p>
+                                    Mostra o total de usuários conectados aos terminais.
+                                </p>
+                            </dd>
+                            <dt><span class="term">-r, --runlevel</span></dt>
+                            <dd>
+                                <p>
+                                    Mostra o nível de execução atual do sistema e desde quando ele está ativo.
+                                </p>
+                            </dd>
+                            <dt><span class="term">-T, -w, --mesg</span></dt>
+                            <dd>
+                                <p>
+                                    Mostra se o usuário pode receber mensagens via <span
+                                        class="command"><strong>talk</strong></span>
+                                    (conversação).
+                                </p>
+                                <div class="itemizedlist">
+                                    <ul class="itemizedlist" style="list-style-type: disc; ">
+                                        <li class="listitem">
+                                            <p>
+                                                + O usuário recebe mensagens via talk
+                                            </p>
+                                        </li>
+                                        <li class="listitem">
+                                            <p>
+                                                - O usuário não recebe mensagens via talk.
+                                            </p>
+                                        </li>
+                                        <li class="listitem">
+                                            <p>
+                                                ? Não foi possível determinar o dispositivo de terminal onde o usuário
+                                                está
+                                                conectado.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
 
+            <hr>
+            <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
+            <div class="navfooter">
+                <hr>
+                <table width="100%" summary="Navigation footer">
+                    <tr>
+                        <td width="40%" style="text-align: left;"><a accesskey="p" href="ch08s40.html">Anterior</a></td>
+                        <td width="20%" style="text-align: center;"></td>
+                        <td width="40%" style="text-align: right;"><a accesskey="n" href="ch09s02.html">Próximo</a></td>
+                    </tr>
+                    <tr>
+                        <td width="40%" style="text-align: left;" valign="top">znew</td>
+                        <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao
+                                Índice</a></td>
+                        <td width="40%" style="text-align: right;" valign="top">telnet</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="piece scanlines noclick"></div>
+            <div class="piece glow noclick"></div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-    <HR xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format">
-    </HR>
-    <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
-    <div class="navfooter">
-        <hr />
-        <table width="100%" summary="Navigation footer">
-            <tr>
-                <td width="40%" style="text-align: left;"><a accesskey="p" href="ch08s40.html">Anterior</a> </td>
-                <td width="20%" style="text-align: center;"> </td>
-                <td width="40%" style="text-align: right;"> <a accesskey="n" href="ch09s02.html">Próximo</a></td>
-            </tr>
-            <tr>
-                <td width="40%" style="text-align: left;" valign="top">znew </td>
-                <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao Índice</a></td>
-                <td width="40%" style="text-align: right;" valign="top"> telnet</td>
-            </tr>
-        </table>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

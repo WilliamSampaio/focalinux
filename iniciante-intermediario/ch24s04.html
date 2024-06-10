@@ -9,75 +9,90 @@
     <link rel="up" href="ch24.html" title="Capítulo 24. Executando tarefas diversas no Linux" />
     <link rel="prev" href="ch24s03.html" title="Assistindo DVDs" />
     <link rel="next" href="ch24s05.html" title="Convertendo músicas do formato mp3 para cdr" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet/less" type="text/css" href="../style.less" />
 </head>
 
-<body text="black" link="#0000FF" alink="#0000FF">
-    <div class="navheader">
-        <table width="100%" summary="Navigation header">
-            <tr>
-                <th colspan="3" style="text-align: center;">Convertendo músicas no formato wav para mp3</th>
-            </tr>
-            <tr>
-                <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch24s03.html">Anterior</a> </td>
-                <th style="width: 60%; text-align: center;">Capítulo 24. Executando tarefas diversas no Linux</th>
-                <td style="width: 20%; text-align: right;"> <a accesskey="n" href="ch24s05.html">Próximo</a></td>
-            </tr>
-        </table>
-        <hr />
-    </div>
-    <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span class="breadcrumb-link"><a
-                href="index.html">Guia Foca Linux</a></span> &gt; <span class="breadcrumb-link"><a
-                href="ch24.html">Executando tarefas diversas no Linux</a></span> &gt; <span
-            class="breadcrumb-node">Convertendo músicas no formato wav para mp3</span></div>
-    <div class="section">
-        <div class="titlepage">
-            <div>
-                <div>
-                    <h2 class="title" style="clear: both"><a id="tasks-wavtomp3"></a>Convertendo músicas no formato wav
-                        para mp3</h2>
-                </div>
+<body class="noisy">
+    <div class="frame">
+        <div class="piece output">
+            <div class="navheader">
+                <table width="100%" summary="Navigation header">
+                    <tr>
+                        <th colspan="3" style="text-align: center;">Convertendo músicas no formato wav para mp3</th>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%; text-align: left;"><a accesskey="p" href="ch24s03.html">Anterior</a></td>
+                        <th style="width: 60%; text-align: center;">Capítulo 24. Executando tarefas diversas no Linux
+                        </th>
+                        <td style="width: 20%; text-align: right;"><a accesskey="n" href="ch24s05.html">Próximo</a></td>
+                    </tr>
+                </table>
+                <hr>
             </div>
-        </div>
-        <p>
-            A conversão é explicada aqui usando o programa <span class="command"><strong>bladeenc</strong></span>.
-            Você pode baixa-lo de <a class="ulink" href="http://bladeenc.mp3.no/"
-                target="_top">http://bladeenc.mp3.no/</a>. O
-            <span class="command"><strong>bladeenc</strong></span> foi o escolhido por apresentar a melhor performance
-            e qualidade para conversão da músicas, que é importante para quem tem máquinas
-            menos potentes e processamento leve é valioso para você :-)
-        </p>
-        <p>
-            A conversão é feita da seguinte forma:
-        </p>
-        <pre class="screen">
+            <div xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format" class="breadcrumbs"><span
+                    class="breadcrumb-link"><a href="index.html">Guia Foca Linux</a></span> &gt; <span
+                    class="breadcrumb-link"><a href="ch24.html">Executando tarefas diversas no Linux</a></span> &gt;
+                <span class="breadcrumb-node">Convertendo músicas no formato wav para mp3</span></div>
+            <div class="section">
+                <div class="titlepage">
+                    <div>
+                        <div>
+                            <h2 class="title" style="clear: both"><a id="tasks-wavtomp3"></a>Convertendo músicas no
+                                formato wav
+                                para mp3</h2>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    A conversão é explicada aqui usando o programa <span
+                        class="command"><strong>bladeenc</strong></span>.
+                    Você pode baixa-lo de <a class="ulink" href="http://bladeenc.mp3.no/"
+                        target="_top">http://bladeenc.mp3.no/</a>. O
+                    <span class="command"><strong>bladeenc</strong></span> foi o escolhido por apresentar a melhor
+                    performance
+                    e qualidade para conversão da músicas, que é importante para quem tem máquinas
+                    menos potentes e processamento leve é valioso para você :-)
+                </p>
+                <p>
+                    A conversão é feita da seguinte forma:
+                </p>
+                <pre class="screen">
 bladeenc -progress=4 -del *.wav
 </pre>
-        <p>
-            A opção <code class="literal">-del</code> diz para apagar os arquivos
-            <code class="filename">.wav</code> a medida que são convertidos e
-            <code class="literal">-progress=4</code> para mostrar uma barra de progresso total e
-            outra do arquivo que está sendo processado.
-        </p>
+                <p>
+                    A opção <code class="literal">-del</code> diz para apagar os arquivos
+                    <code class="filename">.wav</code> a medida que são convertidos e
+                    <code class="literal">-progress=4</code> para mostrar uma barra de progresso total e
+                    outra do arquivo que está sendo processado.
+                </p>
+            </div>
+
+            <hr>
+            <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
+            <div class="navfooter">
+                <hr>
+                <table width="100%" summary="Navigation footer">
+                    <tr>
+                        <td width="40%" style="text-align: left;"><a accesskey="p" href="ch24s03.html">Anterior</a></td>
+                        <td width="20%" style="text-align: center;"><a accesskey="u" href="ch24.html">Subir</a></td>
+                        <td width="40%" style="text-align: right;"><a accesskey="n" href="ch24s05.html">Próximo</a></td>
+                    </tr>
+                    <tr>
+                        <td width="40%" style="text-align: left;" valign="top">Assistindo DVDs</td>
+                        <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao
+                                Índice</a></td>
+                        <td width="40%" style="text-align: right;" valign="top">Convertendo músicas do formato mp3 para
+                            cdr</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="piece scanlines noclick"></div>
+            <div class="piece glow noclick"></div>
+        </div>
     </div>
-    <HR xmlns="" xmlns:fo="http://www.w3.org/1999/XSL/Format">
-    </HR>
-    <p class="copyright">Copyright © 1999-2020 - Gleydson Mazioli da Silva</p>
-    <div class="navfooter">
-        <hr />
-        <table width="100%" summary="Navigation footer">
-            <tr>
-                <td width="40%" style="text-align: left;"><a accesskey="p" href="ch24s03.html">Anterior</a> </td>
-                <td width="20%" style="text-align: center;"><a accesskey="u" href="ch24.html">Subir</a></td>
-                <td width="40%" style="text-align: right;"> <a accesskey="n" href="ch24s05.html">Próximo</a></td>
-            </tr>
-            <tr>
-                <td width="40%" style="text-align: left;" valign="top">Assistindo DVDs </td>
-                <td width="20%" style="text-align: center;"><a accesskey="h" href="index.html">Voltar ao Índice</a></td>
-                <td width="40%" style="text-align: right;" valign="top"> Convertendo músicas do formato mp3 para cdr</td>
-            </tr>
-        </table>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>
