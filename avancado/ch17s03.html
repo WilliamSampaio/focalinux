@@ -9,11 +9,11 @@
     <link rel="up" href="ch17.html" title="Capítulo 17. CVS" />
     <link rel="prev" href="ch17s02.html" title="Servidor de CVS - configurando métodos de acesso ao repositório" />
     <link rel="next" href="ch17s04.html" title="Arquivos administrativos em CVSROOT" />
-    <link rel="stylesheet/less" type="text/css" href="../style.less" />
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-    <div class="frame">
+    <div id="content" class="frame" style="display: none;">
         <div class="piece output">
             <div class="navheader">
                 <table width="100%" summary="Navigation header">
@@ -702,9 +702,13 @@ cvs release -d modulo
             <div class="piece glow noclick"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#content").fadeIn(1);
+        });
+    </script>
 </body>
 
 </html>

@@ -10,11 +10,11 @@
       <link rel="prev" href="ch03s02.html" title="Nomes de dispositivos" />
       <link rel="next" href="ch03s04.html"
             title="Hardwares configuráveis por jumpers, dip-switches, jumperless e Plug-and-Play." />
-      <link rel="stylesheet/less" type="text/css" href="../style.less" />
+      <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-      <div class="frame">
+      <div id="content" class="frame" style="display: none;">
             <div class="piece output">
                   <div class="navheader">
                         <table width="100%" summary="Navigation header">
@@ -393,6 +393,11 @@ DMA    Barram.    Uso
       <script src="https://cdn.jsdelivr.net/npm/less"></script>
       <script src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function () {
+                  $("#content").fadeIn(1);
+            });
+      </script>
 </body>
 
 </html>

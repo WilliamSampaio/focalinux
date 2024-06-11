@@ -9,11 +9,11 @@
     <link rel="up" href="ch18.html" title="Capítulo 18. SAMBA" />
     <link rel="prev" href="ch18s04.html" title="Configuração em Grupo de Trabalho" />
     <link rel="next" href="ch18s06.html" title="Servidor de data/hora" />
-    <link rel="stylesheet/less" type="text/css" href="../style.less" />
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-    <div class="frame">
+    <div id="content" class="frame" style="display: none;">
         <div class="piece output">
             <div class="navheader">
                 <table width="100%" summary="Navigation header">
@@ -174,7 +174,8 @@ localhost</code> e veja o diretório de pesquisa deste arquivo. Veja um
                             <div>
                                 <div>
                                     <h4 class="title"><a id="s-samba-s-nameresolve-lmhosts-windows-ex"></a>Exemplo de
-                                        <code class="filename">lmhosts</code> do Windows</h4>
+                                        <code class="filename">lmhosts</code> do Windows
+                                    </h4>
                                 </div>
                             </div>
                         </div>
@@ -435,9 +436,13 @@ wins server = 192.168.1.1
             <div class="piece glow noclick"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#content").fadeIn(1);
+        });
+    </script>
 </body>
 
 </html>

@@ -9,11 +9,11 @@
     <link rel="up" href="ch11.html" title="Capítulo 11. Permissões de acesso a arquivos e diretórios" />
     <link rel="prev" href="ch11s03.html" title="Etapas para acesso a um arquivo/diretório" />
     <link rel="next" href="ch11s05.html" title="Permissões de Acesso Especiais" />
-    <link rel="stylesheet/less" type="text/css" href="../style.less" />
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-    <div class="frame">
+    <div id="content" class="frame" style="display: none;">
         <div class="piece output">
             <div class="navheader">
                 <table width="100%" summary="Navigation header">
@@ -365,9 +365,13 @@
             <div class="piece glow noclick"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#content").fadeIn(1);
+        });
+    </script>
 </body>
 
 </html>

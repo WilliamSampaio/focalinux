@@ -9,11 +9,11 @@
     <link rel="up" href="ch03.html" title="Capítulo 3. Hardware" />
     <link rel="prev" href="ch03.html" title="Capítulo 3. Hardware" />
     <link rel="next" href="ch03s03.html" title="Configuração de Hardware" />
-    <link rel="stylesheet/less" type="text/css" href="../style.less" />
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-    <div class="frame">
+    <div id="content" class="frame" style="display: none;">
         <div class="piece output">
             <div class="navheader">
                 <table width="100%" summary="Navigation header">
@@ -120,9 +120,13 @@ lp1        LPT2       5      3(ECP)  0x278
             <div class="piece glow noclick"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#content").fadeIn(1);
+        });
+    </script>
 </body>
 
 </html>

@@ -9,11 +9,11 @@
     <link rel="up" href="ch19.html" title="Capítulo 19. Restrições de acesso, recursos e serviços" />
     <link rel="prev" href="ch19s06.html" title="Restrições baseadas em usuário/IP" />
     <link rel="next" href="ch19s08.html" title="Desabilitando serviços não usados no Inetd" />
-    <link rel="stylesheet/less" type="text/css" href="../style.less" />
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-    <div class="frame">
+    <div id="content" class="frame" style="display: none;">
         <div class="piece output">
             <div class="navheader">
                 <table width="100%" summary="Navigation header">
@@ -145,9 +145,13 @@
             <div class="piece glow noclick"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#content").fadeIn(1);
+        });
+    </script>
 </body>
 
 </html>

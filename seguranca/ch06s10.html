@@ -9,11 +9,11 @@
     <link rel="up" href="ch06.html" title="Capítulo 6. Restrições de acesso, recursos e serviços" />
     <link rel="prev" href="ch06s09.html" title="Evitando o uso de hosts.equiv e .rhosts" />
     <link rel="next" href="ch06s11.html" title="Restringindo o acesso ao sistema de arquivos /proc" />
-    <link rel="stylesheet/less" type="text/css" href="../style.less" />
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-    <div class="frame">
+    <div id="content" class="frame" style="display: none;">
         <div class="piece output">
             <div class="navheader">
                 <table width="100%" summary="Navigation header">
@@ -106,9 +106,13 @@ ca:12345:ctrlaltdel:/sbin/shutdown -a -t5 -r now
             <div class="piece glow noclick"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#content").fadeIn(1);
+        });
+    </script>
 </body>
 
 </html>

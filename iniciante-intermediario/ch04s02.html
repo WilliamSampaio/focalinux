@@ -11,11 +11,11 @@
   <link rel="prev" href="ch04.html"
     title="Capítulo 4. Para quem esta migrando (ou pensando em migrar) do DOS/Windows para o Linux" />
   <link rel="next" href="ch04s03.html" title="Usando a sintaxe de comandos DOS no Linux" />
-  <link rel="stylesheet/less" type="text/css" href="../style.less" />
+  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-  <div class="frame">
+  <div id="content" class="frame" style="display: none;">
     <div class="piece output">
       <div class="navheader">
         <table width="100%" summary="Navigation header">
@@ -218,6 +218,11 @@ xcopy     cp -R        Pouca diferença, requer que seja usado a
   <script src="https://cdn.jsdelivr.net/npm/less"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      $("#content").fadeIn(1);
+    });
+  </script>
 </body>
 
 </html>

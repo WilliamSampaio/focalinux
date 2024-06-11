@@ -9,11 +9,11 @@
        <link rel="up" href="ch07.html" title="Capítulo 7. Criptografia" />
        <link rel="prev" href="ch07s10.html" title="Alternativas seguras a serviços sem criptografia" />
        <link rel="next" href="ch07s12.html" title="Criptografia de blocos usando DM-Crypt / cryptsetup" />
-       <link rel="stylesheet/less" type="text/css" href="../style.less" />
+       <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-       <div class="frame">
+       <div id="content" class="frame" style="display: none;">
               <div class="piece output">
                      <div class="navheader">
                             <table width="100%" summary="Navigation header">
@@ -37,7 +37,8 @@
                             <span class="breadcrumb-link"><a href="ch07.html">Criptografia</a></span> &gt; <span
                                    class="breadcrumb-node">Usando o <span xmlns="http://www.w3.org/1999/xhtml"
                                           class="command"><strong>GPG</strong></span> para
-                                   Autenticação e Criptografia</span></div>
+                                   Autenticação e Criptografia</span>
+                     </div>
                      <div class="section">
                             <div class="titlepage">
                                    <div>
@@ -45,7 +46,8 @@
                                                  <h2 class="title" style="clear: both"><a id="d-cripto-gpg"></a>Usando o
                                                         <span class="command"><strong>GPG</strong></span> para
                                                         Autenticação e
-                                                        Criptografia</h2>
+                                                        Criptografia
+                                                 </h2>
                                           </div>
                                    </div>
                             </div>
@@ -985,6 +987,11 @@ Comandos do gpg (GNUpg) correspondentes a cada passo:
        <script src="https://cdn.jsdelivr.net/npm/less"></script>
        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
               integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+       <script type="text/javascript">
+              document.addEventListener('DOMContentLoaded', function () {
+                     $("#content").fadeIn(1);
+              });
+       </script>
 </body>
 
 </html>

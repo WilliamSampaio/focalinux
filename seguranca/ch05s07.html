@@ -9,11 +9,11 @@
        <link rel="up" href="ch05.html" title="Capítulo 5. Firewall iptables" />
        <link rel="prev" href="ch05s06.html" title="Outros módulos do iptables" />
        <link rel="next" href="ch05s08.html" title="Exemplos de configurações do iptables" />
-       <link rel="stylesheet/less" type="text/css" href="../style.less" />
+       <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-       <div class="frame">
+       <div id="content" class="frame" style="display: none;">
               <div class="piece output">
                      <div class="navheader">
                             <table width="100%" summary="Navigation header">
@@ -35,7 +35,8 @@
                                    class="breadcrumb-link"><a href="index.html">Guia Foca - Segurança</a></span> &gt;
                             <span class="breadcrumb-link"><a href="ch05.html">Firewall iptables</a></span> &gt; <span
                                    class="breadcrumb-node">Caminho
-                                   percorrido pelos pacotes nas tabelas e chains</span></div>
+                                   percorrido pelos pacotes nas tabelas e chains</span>
+                     </div>
                      <div class="section">
                             <div class="titlepage">
                                    <div>
@@ -1021,6 +1022,11 @@ E ---&gt; PREROUTING ------&gt; (ROTEAM.) ---&gt; FORWARD ----------&gt; POSTROU
        <script src="https://cdn.jsdelivr.net/npm/less"></script>
        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
               integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+       <script type="text/javascript">
+              document.addEventListener('DOMContentLoaded', function () {
+                     $("#content").fadeIn(1);
+              });
+       </script>
 </body>
 
 </html>

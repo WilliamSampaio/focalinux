@@ -9,11 +9,11 @@
         content="Este guia tem por objetivo ser uma referência ao aprendizado do usuário e um manual de compreensão, configuração e implantação de técnicas de segurança que podem ser utilizadas em ambientes Linux (e outros sistemas operacionais), bem como em seu comportamento no dia a dia. As últimas versões do Guia Foca segurança podem ser encontrados em Página Oficial do Guia Foca Segurança. Novas versões são lançadas com uma frequência mensal e você pode receber avisos de novos lançamentos deste guia preenchendo um formulário na página Web, ou seguindo o perfil oficial do Twitter @guiafoca." />
     <link rel="home" href="index.html" title="Guia Foca - Segurança" />
     <link rel="next" href="ch01.html" title="Capítulo 1. Introdução" />
-    <link rel="stylesheet/less" type="text/css" href="../style.less" />
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-    <div class="frame">
+    <div id="content" class="frame" style="display: none;">
         <div class="piece output">
             <div class="navheader">
                 <table width="100%" summary="Navigation header">
@@ -1228,9 +1228,13 @@
             <div class="piece glow noclick"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#content").fadeIn(1);
+        });
+    </script>
 </body>
 
 </html>

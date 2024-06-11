@@ -9,11 +9,11 @@
   <link rel="up" href="ch05.html" title="Capítulo 5. Configurações especiais de Rede" />
   <link rel="prev" href="ch05s02.html" title="Bridge" />
   <link rel="next" href="ch05s04.html" title="Conectando dois computadores usando a porta serial" />
-  <link rel="stylesheet/less" type="text/css" href="../style.less" />
+  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="noisy">
-  <div class="frame">
+  <div id="content" class="frame" style="display: none;">
     <div class="piece output">
       <div class="navheader">
         <table width="100%" summary="Navigation header">
@@ -317,6 +317,11 @@ plip</code>). Após isto, a porta paralela será liberada para uso por outros
   <script src="https://cdn.jsdelivr.net/npm/less"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      $("#content").fadeIn(1);
+    });
+  </script>
 </body>
 
 </html>
